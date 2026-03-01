@@ -41,12 +41,12 @@ function Navbar({ toggleTheme, isDarkMode }: { toggleTheme?: () => void, isDarkM
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
               <img
-                src="/cci-logo.png"
+                src="/cci-logo.webp"
                 alt="CCI Logo"
                 className="h-10 w-auto object-contain dark:bg-white dark:p-1 dark:rounded-md"
                 onError={(e) => {
                   e.currentTarget.onerror = null;
-                  e.currentTarget.src = 'https://placehold.co/200x60/f8fafc/475569?text=Upload+cci-logo.png';
+                  e.currentTarget.src = 'https://placehold.co/200x60/f8fafc/475569?text=Upload+cci-logo.webp';
                 }}
               />
               <span className="ml-3 text-2xl font-bold text-slate-900 dark:text-white tracking-tight">360Suite</span>
@@ -133,7 +133,7 @@ function Hero() {
         />
 
         {/* Overlay Image with lower opacity for a cleaner look */}
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')] bg-cover bg-center opacity-[0.03] mix-blend-screen"></div>
+        {/* Removed: external Unsplash image at 3% opacity — invisible but adds network request */}
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -216,7 +216,7 @@ function Products() {
       id: 'inspect360',
       name: 'Inspect360',
       icon: Search,
-      logo: '/inspect360-logo.png',
+      logo: '/inspect360-logo.webp',
       positioning: 'Digitize field inspections, standardize evaluation workflows, and maintain structured audit-ready records across multi-site operations.',
       capabilities: [
         'Configurable Inspection Templates',
@@ -228,7 +228,7 @@ function Products() {
       id: 'compliance360',
       name: 'Compliance360',
       icon: ShieldCheck,
-      logo: '/compliance360-logo.png',
+      logo: '/compliance360-logo.webp',
       positioning: 'Centralize ISO compliance requirements, manage risk registers, control documentation, and maintain continuous audit readiness across your organization.',
       capabilities: [
         'Centralized Document Control',
@@ -240,7 +240,7 @@ function Products() {
       id: 'qc360',
       name: 'QC360',
       icon: Activity,
-      logo: '/qc360-logo.jpg',
+      logo: '/qc360-logo.webp',
       positioning: 'AI-powered quality inspection platform for defect detection, standards-aligned sampling, and full digital traceability.',
       capabilities: [
         'Centralized Inspection Workflows',
@@ -252,7 +252,7 @@ function Products() {
       id: 'audit360',
       name: 'Audit360',
       icon: FileCheck,
-      logo: '/audit360-logo.png',
+      logo: '/audit360-logo.webp',
       positioning: 'Structured audit lifecycle management system for certification bodies, inspection bodies, and accreditation-driven organizations.',
       capabilities: [
         'End-to-End Audit Lifecycle Management',
@@ -650,12 +650,13 @@ function Footer() {
             <div className="flex items-center mb-6">
               <Link to="/" className="flex items-center">
                 <img
-                  src="/cci-logo.png"
+                  src="/cci-logo.webp"
                   alt="CCI Logo"
+                  loading="lazy"
                   className="h-10 w-auto object-contain bg-white p-1.5 rounded-lg"
                   onError={(e) => {
                     e.currentTarget.onerror = null;
-                    e.currentTarget.src = 'https://placehold.co/150x40/f8fafc/0d9488?text=Upload+cci-logo.png';
+                    e.currentTarget.src = 'https://placehold.co/150x40/f8fafc/0d9488?text=Upload+cci-logo.webp';
                   }}
                 />
                 <span className="ml-4 text-2xl font-bold text-white tracking-tight">360Suite</span>
@@ -712,7 +713,7 @@ function ProductDetails() {
     'inspect360': {
       name: 'Inspect360',
       icon: Search,
-      logo: '/inspect360-logo.png',
+      logo: '/inspect360-logo.webp',
       appUrl: 'https://inspect360.companycertification.com',
       tagline: 'Digitize field inspections, standardize evaluation workflows, and maintain structured audit-ready records across multi-site operations.',
       description: [
@@ -757,7 +758,7 @@ function ProductDetails() {
     'compliance360': {
       name: 'Compliance360',
       icon: ShieldCheck,
-      logo: '/compliance360-logo.png',
+      logo: '/compliance360-logo.webp',
       appUrl: 'https://compliance360.companycertification.com',
       tagline: 'Centralize ISO compliance requirements, manage risk registers, control documentation, and maintain continuous audit readiness across your organization.',
       description: [
@@ -802,7 +803,7 @@ function ProductDetails() {
     'qc360': {
       name: 'QC360',
       icon: Activity,
-      logo: '/qc360-logo.jpg',
+      logo: '/qc360-logo.webp',
       appUrl: 'https://qc360.companycertification.com',
       tagline: 'AI-powered quality inspection platform for defect detection, standards-aligned sampling, and full digital traceability across incoming, in-process, and finished goods inspections.',
       description: [
@@ -847,7 +848,7 @@ function ProductDetails() {
     'audit360': {
       name: 'Audit360',
       icon: FileCheck,
-      logo: '/audit360-logo.png',
+      logo: '/audit360-logo.webp',
       appUrl: 'https://audit360.companycertification.com',
       tagline: 'Structured audit lifecycle management system for certification bodies, inspection bodies, and accreditation-driven organizations.',
       description: [
