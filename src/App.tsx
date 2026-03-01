@@ -1,28 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useParams, useNavigate, useLocation } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { 
-  ShieldCheck, 
-  Search, 
-  FileCheck, 
-  Activity, 
-  Globe, 
-  Server, 
-  Lock, 
-  Cpu, 
-  Network, 
-  Building2, 
-  Factory, 
-  HardHat, 
-  Droplets, 
-  ThermometerSnowflake, 
-  Truck, 
-  Award, 
-  CheckCircle2, 
-  FileText, 
-  Presentation, 
+import {
+  ShieldCheck,
+  Search,
+  FileCheck,
+  Activity,
+  Globe,
+  Server,
+  Lock,
+  Cpu,
+  Network,
+  Building2,
+  Factory,
+  HardHat,
+  Droplets,
+  ThermometerSnowflake,
+  Truck,
+  Award,
+  CheckCircle2,
+  FileText,
+  Presentation,
   PlayCircle,
   ArrowRight,
+  ExternalLink,
   ArrowLeft,
   Menu,
   X,
@@ -39,14 +40,14 @@ function Navbar({ toggleTheme, isDarkMode }: { toggleTheme?: () => void, isDarkM
         <div className="flex justify-between h-20">
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
-              <img 
-                src="/cci-logo.png" 
-                alt="CCI Logo" 
-                className="h-10 w-auto object-contain dark:bg-white dark:p-1 dark:rounded-md" 
-                onError={(e) => { 
-                  e.currentTarget.onerror = null; 
-                  e.currentTarget.src = 'https://placehold.co/200x60/f8fafc/475569?text=Upload+cci-logo.png'; 
-                }} 
+              <img
+                src="/cci-logo.png"
+                alt="CCI Logo"
+                className="h-10 w-auto object-contain dark:bg-white dark:p-1 dark:rounded-md"
+                onError={(e) => {
+                  e.currentTarget.onerror = null;
+                  e.currentTarget.src = 'https://placehold.co/200x60/f8fafc/475569?text=Upload+cci-logo.png';
+                }}
               />
               <span className="ml-3 text-2xl font-bold text-slate-900 dark:text-white tracking-tight">360Suite</span>
             </Link>
@@ -57,8 +58,8 @@ function Navbar({ toggleTheme, isDarkMode }: { toggleTheme?: () => void, isDarkM
             <a href="/#industries" className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors">Industries</a>
             <a href="/#assurance" className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors">Assurance</a>
             {toggleTheme && (
-              <button 
-                onClick={toggleTheme} 
+              <button
+                onClick={toggleTheme}
                 className="p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
                 aria-label="Toggle theme"
               >
@@ -71,8 +72,8 @@ function Navbar({ toggleTheme, isDarkMode }: { toggleTheme?: () => void, isDarkM
           </div>
           <div className="flex items-center md:hidden space-x-4">
             {toggleTheme && (
-              <button 
-                onClick={toggleTheme} 
+              <button
+                onClick={toggleTheme}
                 className="p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300"
               >
                 {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
@@ -105,38 +106,38 @@ function Hero() {
       <div className="absolute inset-0 z-0">
         {/* Animated Grid Pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:3rem_3rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-40"></div>
-        
+
         {/* Moving Gradient Background */}
         <div className="absolute top-0 left-0 right-0 h-[500px] bg-gradient-to-b from-cyan-900/20 via-teal-900/10 to-transparent opacity-50 blur-3xl"></div>
-        
+
         {/* Floating Glowing Orbs with more complex animation */}
-        <motion.div 
-          animate={{ 
-            y: [0, -40, 0], 
+        <motion.div
+          animate={{
+            y: [0, -40, 0],
             x: [0, 30, 0],
             scale: [1, 1.1, 1],
-            opacity: [0.3, 0.6, 0.3] 
+            opacity: [0.3, 0.6, 0.3]
           }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
           className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cyan-600/20 rounded-full blur-[120px]"
         />
-        <motion.div 
-          animate={{ 
-            y: [0, 50, 0], 
+        <motion.div
+          animate={{
+            y: [0, 50, 0],
             x: [0, -40, 0],
             scale: [1, 1.2, 1],
-            opacity: [0.2, 0.5, 0.2] 
+            opacity: [0.2, 0.5, 0.2]
           }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
           className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-teal-600/20 rounded-full blur-[140px]"
         />
-        
+
         {/* Overlay Image with lower opacity for a cleaner look */}
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')] bg-cover bg-center opacity-[0.03] mix-blend-screen"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -148,8 +149,8 @@ function Hero() {
           </span>
           Enterprise-Grade Security & Compliance
         </motion.div>
-        
-        <motion.h1 
+
+        <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
@@ -158,8 +159,8 @@ function Hero() {
           Digital Infrastructure for <br className="hidden md:block" />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400 drop-shadow-sm">Inspection & Certification</span>
         </motion.h1>
-        
-        <motion.p 
+
+        <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
@@ -167,8 +168,8 @@ function Hero() {
         >
           A portfolio of secure, scalable platforms designed for regulated industries and global certification bodies.
         </motion.p>
-        
-        <motion.div 
+
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.45, ease: "easeOut" }}
@@ -186,7 +187,7 @@ function Hero() {
           </a>
         </motion.div>
       </div>
-      
+
       {/* Bottom gradient fade to next section */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-50 dark:from-slate-950 to-transparent z-10 pointer-events-none"></div>
     </div>
@@ -274,10 +275,10 @@ function Products() {
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-600 to-teal-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
               <div className="flex items-center mb-6">
                 {product.logo ? (
-                  <img 
-                    src={product.logo} 
-                    alt={`${product.name} Logo`} 
-                    className="h-12 w-auto object-contain" 
+                  <img
+                    src={product.logo}
+                    alt={`${product.name} Logo`}
+                    className="h-12 w-auto object-contain"
                     onError={(e) => {
                       e.currentTarget.onerror = null;
                       e.currentTarget.src = `https://placehold.co/200x60/f8fafc/0e7490?text=Upload+${product.logo.replace('/', '')}`;
@@ -373,7 +374,7 @@ function Industries() {
 
 function RegionalPresence() {
   const regions = ['USA', 'UK', 'EU', 'GCC', 'Pakistan', 'Oman'];
-  
+
   return (
     <div className="py-24 bg-slate-950 text-white relative overflow-hidden">
       <div className="absolute inset-0 opacity-20">
@@ -648,14 +649,14 @@ function Footer() {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center mb-6">
               <Link to="/" className="flex items-center">
-                <img 
-                  src="/cci-logo.png" 
-                  alt="CCI Logo" 
-                  className="h-10 w-auto object-contain bg-white p-1.5 rounded-lg" 
-                  onError={(e) => { 
-                    e.currentTarget.onerror = null; 
-                    e.currentTarget.src = 'https://placehold.co/150x40/f8fafc/0d9488?text=Upload+cci-logo.png'; 
-                  }} 
+                <img
+                  src="/cci-logo.png"
+                  alt="CCI Logo"
+                  className="h-10 w-auto object-contain bg-white p-1.5 rounded-lg"
+                  onError={(e) => {
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = 'https://placehold.co/150x40/f8fafc/0d9488?text=Upload+cci-logo.png';
+                  }}
                 />
                 <span className="ml-4 text-2xl font-bold text-white tracking-tight">360Suite</span>
               </Link>
@@ -712,6 +713,7 @@ function ProductDetails() {
       name: 'Inspect360',
       icon: Search,
       logo: '/inspect360-logo.png',
+      appUrl: 'https://inspect360.companycertification.com',
       tagline: 'Digitize field inspections, standardize evaluation workflows, and maintain structured audit-ready records across multi-site operations.',
       description: [
         'Inspect360 is a structured inspection management platform designed to standardize operational inspections across industries. It replaces paper-based checklists and fragmented reporting with centralized digital workflows, real-time analytics, and traceable inspection records.',
@@ -756,6 +758,7 @@ function ProductDetails() {
       name: 'Compliance360',
       icon: ShieldCheck,
       logo: '/compliance360-logo.png',
+      appUrl: 'https://compliance360.companycertification.com',
       tagline: 'Centralize ISO compliance requirements, manage risk registers, control documentation, and maintain continuous audit readiness across your organization.',
       description: [
         'Compliance360 is an enterprise-grade compliance management platform designed to support organizations operating under ISO standards and regulatory frameworks. It centralizes documentation, risk management, corrective actions, and internal audit tracking within a structured digital environment.',
@@ -800,6 +803,7 @@ function ProductDetails() {
       name: 'QC360',
       icon: Activity,
       logo: '/qc360-logo.jpg',
+      appUrl: 'https://qc360.companycertification.com',
       tagline: 'AI-powered quality inspection platform for defect detection, standards-aligned sampling, and full digital traceability across incoming, in-process, and finished goods inspections.',
       description: [
         'QC360 is an intelligent quality control platform designed to digitize and standardize visual inspection workflows. It combines structured sampling methodologies, AI-based defect detection, and centralized inspection records to ensure consistent, audit-ready quality decisions.',
@@ -844,6 +848,7 @@ function ProductDetails() {
       name: 'Audit360',
       icon: FileCheck,
       logo: '/audit360-logo.png',
+      appUrl: 'https://audit360.companycertification.com',
       tagline: 'Structured audit lifecycle management system for certification bodies, inspection bodies, and accreditation-driven organizations.',
       description: [
         'Audit360 is an enterprise-grade audit management platform designed specifically for certification bodies and regulated assessment organizations. It digitizes the complete audit lifecycle — from application intake and audit planning to reporting, certification decision, and surveillance management.',
@@ -907,20 +912,20 @@ function ProductDetails() {
         <button onClick={() => navigate(-1)} className="mb-8 inline-flex items-center text-sm font-bold text-slate-500 hover:text-cyan-700 transition-colors">
           <ArrowLeft className="mr-2 h-4 w-4" /> Back to Products
         </button>
-        
+
         <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
           <div className="p-8 md:p-12 lg:p-16 border-b border-slate-100 bg-slate-950 text-white relative overflow-hidden">
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-cyan-600/10 blur-[80px] rounded-full pointer-events-none translate-x-1/3 -translate-y-1/3"></div>
-            
+
             <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8">
               <div>
                 <div className="flex items-center mb-6">
                   {product.logo ? (
                     <div className="bg-white p-3 rounded-xl inline-block">
-                      <img 
-                        src={product.logo} 
-                        alt={`${product.name} Logo`} 
-                        className="h-12 w-auto object-contain" 
+                      <img
+                        src={product.logo}
+                        alt={`${product.name} Logo`}
+                        className="h-12 w-auto object-contain"
                         onError={(e) => {
                           e.currentTarget.onerror = null;
                           e.currentTarget.src = `https://placehold.co/200x60/f8fafc/0e7490?text=Upload+${product.logo.replace('/', '')}`;
@@ -936,14 +941,19 @@ function ProductDetails() {
                 </div>
                 <p className="text-xl text-slate-300 max-w-2xl leading-relaxed">{product.tagline}</p>
               </div>
-              <div className="shrink-0">
+              <div className="shrink-0 flex flex-col sm:flex-row gap-4">
+                {product.appUrl && (
+                  <a href={product.appUrl} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-xl text-slate-950 bg-gradient-to-r from-cyan-400 to-teal-400 hover:from-cyan-300 hover:to-teal-300 transition-all shadow-[0_0_30px_rgba(45,212,191,0.3)] hover:shadow-[0_0_50px_rgba(45,212,191,0.5)] hover:-translate-y-0.5">
+                    Open App <ExternalLink className="ml-2 h-5 w-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </a>
+                )}
                 <a href="/#contact" className="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-xl text-white bg-cyan-700 hover:bg-cyan-600 transition-all shadow-[0_0_20px_rgba(14,116,144,0.3)]">
                   Request Demo
                 </a>
               </div>
             </div>
           </div>
-          
+
           <div className="p-8 md:p-12 lg:p-16 grid grid-cols-1 lg:grid-cols-3 gap-16">
             <div className="lg:col-span-2">
               <h2 className="text-2xl font-bold text-slate-900 mb-6">Platform Overview</h2>
@@ -956,7 +966,7 @@ function ProductDetails() {
                   <p>{product.description}</p>
                 )}
               </div>
-              
+
               <h2 className="text-2xl font-bold text-slate-900 mb-6">Key Capabilities</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {product.features.map((feature: any, idx: number) => (
@@ -976,7 +986,7 @@ function ProductDetails() {
                 ))}
               </div>
             </div>
-            
+
             <div>
               <div className="bg-slate-50 rounded-2xl p-8 border border-slate-100 mb-8">
                 <h3 className="text-lg font-bold text-slate-900 mb-4">Integration Ready</h3>
@@ -987,7 +997,7 @@ function ProductDetails() {
                   <Network className="h-5 w-5 mr-2" /> {product.integrationReady?.buttonText || 'API Documentation'}
                 </div>
               </div>
-              
+
               <div className="bg-slate-50 rounded-2xl p-8 border border-slate-100">
                 <h3 className="text-lg font-bold text-slate-900 mb-4">Enterprise Security</h3>
                 <p className="text-slate-600 mb-6">
