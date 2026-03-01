@@ -123,7 +123,7 @@ export default function ProductDetails() {
                             <div>
                                 <div className="flex items-center mb-6">
                                     {product.logo ? (
-                                        <div className="bg-white p-3 rounded-xl inline-block">
+                                        <div className="bg-white p-4 rounded-xl inline-block">
                                             <img
                                                 src={product.logo}
                                                 alt={`${product.name} Logo`}
