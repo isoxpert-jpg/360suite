@@ -127,7 +127,7 @@ export default function ProductDetails() {
                                             <img
                                                 src={product.logo}
                                                 alt={`${product.name} Logo`}
-                                                className="h-12 w-auto object-contain"
+                                                className="h-16 w-auto object-contain"
                                                 onError={(e) => {
                                                     e.currentTarget.onerror = null;
                                                     e.currentTarget.src = `https://placehold.co/200x60/f8fafc/0e7490?text=Upload+${product.logo.replace('/', '')}`;
