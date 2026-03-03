@@ -31,6 +31,7 @@ const products = [
         name: 'Audit360',
         icon: FileCheck,
         logo: '/audit360-logo.webp',
+        logoClass: 'h-24',
         positioning: 'Structured audit lifecycle management system for certification bodies, inspection bodies, and accreditation-driven organizations.',
         capabilities: ['End-to-End Audit Lifecycle Management', 'Auditor Assignment & Competency Tracking', 'Multi-Site & Multi-Standard Support']
     }
@@ -54,7 +55,7 @@ export default function Products() {
                                         src={product.logo}
                                         alt={`${product.name} Logo`}
                                         loading="lazy"
-                                        className="h-16 w-auto object-contain object-left"
+                                        className={`${product.logoClass || 'h-16'} w-auto object-contain object-left`}
                                         onError={(e) => {
                                             e.currentTarget.onerror = null;
                                             e.currentTarget.src = `https://placehold.co/200x60/f8fafc/0e7490?text=Upload+${product.logo.replace('/', '')}`;
