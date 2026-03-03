@@ -1,7 +1,7 @@
 import { Globe } from 'lucide-react';
 
 export default function RegionalPresence() {
-    const regions = ['USA', 'UK', 'EU', 'GCC', 'Pakistan', 'Oman'];
+    const regions = ['USA', 'UK', 'EU', 'GCC', 'Asia', 'CA'];
 
     return (
         <div className="py-24 bg-slate-950 text-white relative overflow-hidden">
